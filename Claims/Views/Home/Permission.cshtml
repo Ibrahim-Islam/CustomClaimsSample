@@ -1,0 +1,25 @@
+﻿@model List<IGrouping<Claims.Models.ApplicationRoleGroup, Claims.Models.ApplicationRoleViewModel>>
+
+@{
+    ViewBag.Title = "User Permission";
+}
+
+<h2>User Permissions</h2>
+
+@using(Html.BeginForm("SavePermission", "Home", FormMethod.Post))
+{
+    foreach (var rg in Model)
+    {
+        <div id="checkboxes">
+            <label>@rg.Key.Name</label>
+            <ul>
+                @foreach (var r in rg.ToList())
+                {
+                    <li><input name="selected" value="@r.Id" type="checkbox" @(r.IsChecked == true ? "checked" : "")>@r.Description</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <input type="submit" name="submit" value="Submit" />
+}

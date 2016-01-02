@@ -30,18 +30,21 @@ namespace Claims.Models
             context.Roles.Add(new ApplicationRole
             {
                 Name = "Home_About",
+                Description = "Access to About",
                 RoleGroup = home
             });
 
             context.Roles.Add(new ApplicationRole
             {
                 Name = "Home_Contact",
+                Description = "Access to Contact",
                 RoleGroup = home
             });
 
             context.Roles.Add(new ApplicationRole
             {
                 Name = "Home_Permission",
+                Description = "Access to Permission",
                 RoleGroup = home
             });
 
